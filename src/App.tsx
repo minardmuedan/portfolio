@@ -1,11 +1,10 @@
 import Navbar from './components/navbar'
+import { ProjectDialog } from './components/project'
 import TechStacks from './components/tech-stacks'
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { Label } from './components/ui/label'
 import { Textarea } from './components/ui/textarea'
-
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 
 export default function App() {
   return (
@@ -23,7 +22,7 @@ export default function App() {
 
         <section id='about-section'>
           <h3 className='text-xl mb-4 font-semibold'>🙋🏻‍♂️ About Me?</h3>
-          <p className='max-w-3xl text-muted-foreground'>
+          <p className='max-w-    text-muted-foreground'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos totam corrupti minus explicabo incidunt. Illo consectetur earum
             magni, laudantium reiciendis quidem odio? Incidunt rem, unde dolorem velit eveniet pariatur? Libero est possimus, esse quaerat
             quod sed culpa obcaecati nesciunt magnam corporis enim totam dolor fugit modi recusandae cumque maiores nemo?
@@ -37,12 +36,19 @@ export default function App() {
           <h3 className='text-xl font-semibold mb-10'>📚 Projects</h3>
 
           <ul className='space-y-10'>
-            <li className=' flex gap-10  border hover:bg-accent p-5 items-center rounded-xl'>
-              <div className='grid grid-cols-2 gap-1'>
-                <div className='bg-slate-300 h-72 w-52 rounded'></div>
-                <div className='flex gap-1 flex-col w-52'>
-                  <div className='bg-slate-400 w-full h-full rounded'></div>
-                  <div className='bg-slate-500 w-full h-full rounded'></div>
+            <li className='flex gap-10  border hover:bg-accent p-5 items-center rounded-xl'>
+              <div className='h-72 grid grid-cols-2 aspect-square border gap-1'>
+                <div className='overflow-hidden relative bg-red-500'>
+                  <img src='/project-images/movie-homepage-768.png' className='rounded object-cover absolute h-full' />
+                </div>
+
+                <div className='grid gap-1 grid-cols-1'>
+                  <div className='overflow-hidden relative bg-red-500'>
+                    <img src='/project-images/movie-popular.png' className='rounded object-cover absolute w-full' />
+                  </div>
+                  <div className='overflow-hidden relative bg-red-500'>
+                    <img src='/project-images/movie-details.png' className='rounded object-cover absolute w-full' />
+                  </div>
                 </div>
               </div>
 
@@ -55,19 +61,21 @@ export default function App() {
                   atque, excepturi hic nesciunt officia sint sapiente cumque dignissimos.
                 </p>
 
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className='mt-5'>view more</Button>
-                  </DialogTrigger>
-                  <DialogContent className=' md:max-w-2xl lg:max-w-3xl'>
-                    <DialogHeader>
-                      <DialogTitle>Are you absolutely sure?</DialogTitle>
-                      <DialogDescription>
-                        This action cannot be undone. This will permanently delete your account and remove your data from our servers.
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
+                <ProjectDialog
+                  title='Movies & Tv Shows Browsing Website'
+                  description=' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur voluptas ab iusto ex recusandae at sunt, distinctio
+                  quia. Laudantium ab nobis illum, sed et non alias nostrum nesciunt. Necessitatibus voluptatum repellendus culpa vero quae
+                  ad odit minus soluta libero sequi nobis quaerat, fuga asperiores exercitationem neque. Possimus id facere eligendi! Fuga
+                  atque, excepturi hic nesciunt officia sint sapiente cumque dignissimos.'
+                  stacks={['NextJS', 'React', 'Tailwind', 'Postgres']}
+                  skillAndDeliverables={['Image Optimization', 'Authentication', 'UI', 'UX', 'Backend', 'Frontend']}
+                  images={[
+                    { src: 'movie-homepage-768.png' },
+                    { src: 'movie-popular.png' },
+                    { src: 'movie-details.png' },
+                    { src: 'movie-tv-season-details.png' },
+                  ]}
+                />
               </div>
             </li>
 
@@ -154,7 +162,7 @@ export default function App() {
 
         <footer className='pb-20 space-y-5 text-center'>
           <p className='text-4xl'>🌸 🌼 🌸</p>
-          <p className='text-3xl'>just because it&#8217;s simple doesn&#8217;t mean it&#8217;s bad</p>
+          <p className='text-  '>just because it&#8217;s simple doesn&#8217;t mean it&#8217;s bad</p>
           <p className='text-sm text-muted-foreground'>© 2024 · Minard Parilla | All rights reserved</p>
         </footer>
       </main>

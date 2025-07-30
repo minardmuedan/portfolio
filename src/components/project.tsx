@@ -1,15 +1,33 @@
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { cn } from '@/lib/utils'
 
-type ProjectDialogPropsType = {
+type ProjectPropsType = {
   title: string
   description: string
+  thumbnailSrc: string
   stacks: string[]
   skillAndDeliverables: string[]
   images: { src: string }[]
+  className?: string
 }
 
-export function ProjectDialog({ title, description, stacks, skillAndDeliverables, images }: ProjectDialogPropsType) {
+export default function Project({ ...props }: ProjectPropsType) {
+  return (
+    <div className={cn('flex gap-10 border p-5 items-center rounded-xl', props.className)}>
+      <img src={`project-images/${props.thumbnailSrc}`} className='h-72' />
+
+      <div>
+        <h4 className='font-semibold mb-2'>{props.title}</h4>
+        <p className='text-sm text-muted-foreground max-w-2xl line-clamp-4'>{props.description}</p>
+
+        <ProjectDialog {...props} />
+      </div>
+    </div>
+  )
+}
+
+export function ProjectDialog({ title, description, stacks, skillAndDeliverables, images }: ProjectPropsType) {
   return (
     <Dialog>
       <DialogTrigger asChild>

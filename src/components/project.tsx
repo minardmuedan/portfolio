@@ -14,7 +14,7 @@ type ProjectPropsType = {
 
 export default function Project({ ...props }: ProjectPropsType) {
   return (
-    <div className={cn('flex gap-10 border p-5 items-center rounded-xl', props.className)}>
+    <div className={cn('flex flex-col lg:flex-row gap-10 border p-5 items-center rounded-xl', props.className)}>
       <img src={`project-images/${props.thumbnailSrc}`} className='h-72' />
 
       <div>
@@ -33,8 +33,8 @@ export function ProjectDialog({ title, description, stacks, skillAndDeliverables
       <DialogTrigger asChild>
         <Button className='mt-5'>view more</Button>
       </DialogTrigger>
-      <DialogContent className='grid grid-cols-3 gap-4 md:max-w-2xl lg:max-w-5xl'>
-        <DialogHeader className='sticky top-0 h-fit'>
+      <DialogContent className='rounded-none lg:rounded-lg max-w-full border-0 grid grid-cols-1 md:grid-cols-3 gap-4 lg:max-w-5xl'>
+        <DialogHeader className='md:sticky md:top-0 h-fit'>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>
 

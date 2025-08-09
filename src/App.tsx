@@ -11,11 +11,8 @@ export default function App() {
 
       <main className='px-4 md:px-6 lg:px-10  *:border-green-500 space-y-40'>
         <HeroSection />
-
         <AboutSection />
-
         <ProjectsSection />
-
         <ContactsSection />
 
         <footer className='pb-20 space-y-5 text-center'>

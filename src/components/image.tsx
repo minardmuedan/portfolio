@@ -7,14 +7,16 @@ export default function Image({ width, height, className, blurHash, ...props }: 
   const [isLoading, setIsLoading] = useState(false)
 
   return (
-    <div style={{ aspectRatio: width / height }} className={`relative bg-accent overflow-hidden ${className}`}>
+    <div style={{ aspectRatio: width / height }} className={`relative  bg-accent overflow-hidden ${className}`}>
       <Blurhash hash={blurHash} resolutionX={32} resolutionY={32} punch={1} height='100%' width='100%' />
 
       <img
         {...props}
         loading='lazy'
         onLoad={() => setIsLoading(true)}
-        className={`absolute object-cover inset-0 transition-opacity ease-out ${isLoading ? 'opacity-100' : 'opacity-0'}`}
+        className={`w-full bg-background absolute object-cover inset-0 transition-opacity ease-out ${
+          isLoading ? 'opacity-100' : 'opacity-0'
+        }`}
       />
     </div>
   )

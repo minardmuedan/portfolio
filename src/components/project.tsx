@@ -88,11 +88,7 @@ export function ProjectDialog({ title, description, stacks, skillAndDeliverables
                     /project-images/${src}/425.png 425w,
                     /project-images/${src}/545.png 545w,
                     /project-images/${src}/644.png 644w,
-                    /project-images/${src}/786.png 786w,
-                    /project-images/${src}/940.png 940w,
-                    /project-images/${src}/1070.png 1070w,
-                    /project-images/${src}/1180.png 1180w,
-                   `}
+                    `}
                   alt={src}
                 />
               </li>

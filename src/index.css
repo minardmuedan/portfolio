@@ -139,8 +139,12 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+  html,
   body {
-    @apply bg-background text-foreground relative;
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground relative max-w-[1600px] mx-auto;
   }
   body::before {
     @apply content-[""] absolute  top-21 left-20 bg-gray-100 size-[120px] -z-10;

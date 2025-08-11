@@ -18,7 +18,7 @@ type ProjectPropsType = {
 
 export default function Project({ ...props }: ProjectPropsType) {
   return (
-    <div className={cn('flex flex-col lg:flex-row gap-10 border p-5 items-center rounded-xl', props.className)}>
+    <div className={cn('flex flex-col lg:flex-row justify-between gap-10 border p-5 items-center rounded-xl', props.className)}>
       <Image
         height={396}
         width={592}
@@ -94,15 +94,6 @@ export function ProjectDialog({ title, description, stacks, skillAndDeliverables
               </li>
             ))}
           </ul>
-
-          <div className='border-t mt-5 w-full pt-5'>
-            <p className='mb-5 font-medium text-muted-foreground'>More by Minard P.</p>
-
-            <div className='w-50'>
-              <div className='bg-red-200 mt-2 w-full aspect-square'></div>
-              <p className='mt-2'>Lumina Vision a Gallery browsing website</p>
-            </div>
-          </div>
         </div>
       </DialogContent>
     </Dialog>

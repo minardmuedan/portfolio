@@ -6,10 +6,16 @@ export default function Navbar() {
       <nav>
         <ul className='flex items-center gap-4 text-muted-foreground'>
           {['me', 'projects'].map((label, i) => (
-            <li key={i}>{label}</li>
+            <li key={i}>
+              <Button variant='ghost' asChild>
+                <a href={`#${label}`}>{label}</a>
+              </Button>
+            </li>
           ))}
           <li>
-            <Button>contact me</Button>
+            <Button>
+              <a href='#contacts'>contact me</a>
+            </Button>
           </li>
         </ul>
       </nav>

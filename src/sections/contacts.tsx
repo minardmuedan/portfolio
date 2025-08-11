@@ -9,7 +9,7 @@ export default function ContactsSection() {
 
       <div className='flex flex-col items-center justify-center gap-4'>
         <p className='text-2xl md:text-3xl text-center font-bold'>minardmuedan@gmail.com</p>
-        <Button asChild>
+        <Button data-aos='zoom-in' asChild>
           <a href='mailto:minardmuedan@gmail.com'>
             Contact Me <SendIcon />
           </a>

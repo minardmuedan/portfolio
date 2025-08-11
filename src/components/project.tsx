@@ -2,6 +2,7 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { cn } from '@/lib/utils'
 import Image from './image'
+import { ExternalLinkIcon } from 'lucide-react'
 
 type ProjectPropsType = {
   title: string
@@ -14,6 +15,7 @@ type ProjectPropsType = {
   skillAndDeliverables: string[]
   images: { src: string; blurHash: string; h: number }[]
   className?: string
+  href: string
 }
 
 export default function Project({ ...props }: ProjectPropsType) {
@@ -42,7 +44,7 @@ export default function Project({ ...props }: ProjectPropsType) {
   )
 }
 
-export function ProjectDialog({ title, description, stacks, skillAndDeliverables, images }: ProjectPropsType) {
+export function ProjectDialog({ title, description, stacks, skillAndDeliverables, images, href }: ProjectPropsType) {
   const techUsed = [
     { title: 'Tech Stacks', value: stacks },
     { title: 'Skills and Deliverables', value: skillAndDeliverables },
@@ -56,6 +58,15 @@ export function ProjectDialog({ title, description, stacks, skillAndDeliverables
       <DialogContent className=' max-w-[95%] border-0 grid grid-cols-1 md:grid-cols-3 gap-4 lg:max-w-5xl'>
         <DialogHeader className='md:sticky md:top-0 h-fit'>
           <DialogTitle>{title}</DialogTitle>
+
+          <a
+            href={href}
+            target='_blank'
+            className='flex font-semibold text-blue-500 underline text-sm gap-1 justify-center sm:justify-start'
+          >
+            <p>{href}</p> <ExternalLinkIcon className='inline size-4' />
+          </a>
+
           <DialogDescription>{description}</DialogDescription>
 
           {techUsed.map(({ title, value }) => (

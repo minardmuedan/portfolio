@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Bricolage-Grotesque';
-  src: url('./BricolageGrotesque.ttf');
+  src: url('/fonts/BricolageGrotesque.ttf'), format('truetype');
   font-display: swap;
 }
 
@@ -21,7 +21,7 @@
 
 body {
   scroll-behavior: smooth;
-  font-family: 'Bricolage-Grotesque';
+  font-family: 'Bricolage-Grotesque', sans-serif;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
     linear-gradient(0deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-position: center;
@@ -144,7 +144,7 @@ body {
     @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground relative max-w-[1600px] mx-auto;
+    @apply overflow-x-hidden bg-background text-foreground relative lg:max-w-[1600px] mx-auto;
   }
   body::before {
     @apply content-[""] absolute  top-21 left-20 bg-gray-100 size-[120px] -z-10;

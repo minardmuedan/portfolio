@@ -16,10 +16,10 @@ export default function TechStacks() {
   ]
 
   return (
-    <ul className='flex flex-wrap gap-5 justify-center items-center w'>
+    <ul className='flex flex-wrap gap-5 justify-center items-center'>
       {techStacks.map(({ name, className }, i) => (
-        <li key={i}>
-          <img src={`/icons/${name}.svg`} className={className ?? 'h-10'} />
+        <li data-aos='fade-up' data-aos-delay={i * 50} key={i}>
+          <img src={`/icons/${name}.svg`} className={className ?? 'h-10'} alt={name} />
         </li>
       ))}
     </ul>

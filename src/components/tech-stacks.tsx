@@ -1,3 +1,5 @@
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+
 export default function TechStacks() {
   const techStacks = [
     { name: 'figma', className: 'h-9' },
@@ -9,6 +11,7 @@ export default function TechStacks() {
     { name: 'nextjs', className: 'h-5' },
     { name: 'svelte', className: 'h-10' },
     { name: 'php', className: 'h-8' },
+    { name: 'laravel', className: 'h-9' },
     { name: 'docker', className: 'h-6' },
     { name: 'mysql', className: 'h-9' },
     { name: 'postgres', className: 'h-9' },
@@ -19,7 +22,14 @@ export default function TechStacks() {
     <ul className='flex flex-wrap gap-5 justify-center items-center'>
       {techStacks.map(({ name, className }, i) => (
         <li data-aos='fade-up' data-aos-delay={i * 50} key={i}>
-          <img src={`/icons/${name}.svg`} className={className ?? 'h-10'} alt={name} />
+          <Tooltip>
+            <TooltipTrigger>
+              <img src={`/icons/${name}.svg`} className={className ?? 'h-10'} alt={name} />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{name}</p>
+            </TooltipContent>
+          </Tooltip>
         </li>
       ))}
     </ul>

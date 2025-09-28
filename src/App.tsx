@@ -13,7 +13,7 @@ export default function App() {
     <>
       <Navbar />
 
-      <main className='overflow-x-hidden px-4 md:px-6 lg:px-10  *:border-green-500 space-y-40'>
+      <main className='overflow-x-hidden px-4 md:px-6 lg:px-10 space-y-40'>
         <HeroSection />
         <AboutSection />
         <ProjectsSection />

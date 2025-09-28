@@ -4,7 +4,7 @@
 @font-face {
   font-family: 'Bricolage-Grotesque';
   src: url('/fonts/BricolageGrotesque.ttf'), format('truetype');
-  font-display: swap;
+  font-display: block;
 }
 
 @custom-variant dark (&:is(.dark *));

@@ -20,12 +20,13 @@ type ProjectPropsType = {
 
 export default function Project({ ...props }: ProjectPropsType) {
   return (
-    <div className={cn('flex flex-col lg:flex-row justify-between gap-10 border p-5 items-center rounded-xl', props.className)}>
+    <div className={cn('flex flex-col lg:flex-row justify-between gap-10 border p-5 lg:px-10 items-center rounded-xl', props.className)}>
       <Image
         height={396}
         width={592}
         blurHash={props.thumbnail.blurHash}
         src={`project-images/${props.thumbnail.src}/1200.png 1200w`}
+        alt={`${props.title} image`}
         srcSet={`
           project-images/${props.thumbnail.src}/592.png 592w,
           project-images/${props.thumbnail.src}/858.png 858w,
@@ -35,7 +36,7 @@ export default function Project({ ...props }: ProjectPropsType) {
       />
 
       <div>
-        <h4 className='font-semibold mb-2'>{props.title}</h4>
+        <h3 className='font-semibold mb-2'>{props.title}</h3>
         <p className='text-sm text-muted-foreground max-w-2xl line-clamp-4'>{props.description}</p>
 
         <ProjectDialog {...props} />
@@ -94,6 +95,7 @@ export function ProjectDialog({ title, description, stacks, skillAndDeliverables
                   height={h}
                   blurHash={blurHash}
                   src={`/project-images/${src}/1180.png`}
+                  alt={src}
                   sizes='(min-width: 1180px) 644px, (min-width: 780px) calc(57.63vw - 25px), calc(95vw - 80px)'
                   srcSet={`
                     /project-images/${src}/256.png 256w,
@@ -101,7 +103,6 @@ export function ProjectDialog({ title, description, stacks, skillAndDeliverables
                     /project-images/${src}/545.png 545w,
                     /project-images/${src}/644.png 644w,
                     `}
-                  alt={src}
                 />
               </li>
             ))}

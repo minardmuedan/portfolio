@@ -6,8 +6,8 @@ export default function SectionTitle({
   ...props
 }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) {
   return (
-    <h3 data-aos='fade-right' {...props} className={cn('text-lg md:text-xl mb-4 font-semibold', className)}>
+    <h2 data-aos='fade-right' {...props} className={cn('text-lg md:text-xl mb-4 font-semibold text-muted-foreground/80', className)}>
       {children}
-    </h3>
+    </h2>
   )
 }

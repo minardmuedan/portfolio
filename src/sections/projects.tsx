@@ -70,7 +70,7 @@ export default function ProjectsSection() {
       <ul className='space-y-10'>
         {projects.map((project, i) => (
           <li key={i} data-aos={i % 2 ? 'fade-left' : 'fade-right'}>
-            <Project {...project} className={`${i % 2 ? 'lg:flex-row-reverse' : ''}`} />
+            <Project {...project} className={`${i % 2 ? 'lg:flex-row-reverse' : 'justify-start gap-20'}`} />
           </li>
         ))}
       </ul>
